@@ -14,8 +14,6 @@
 		925943BE2315885000ADB39E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 925943BC2315885000ADB39E /* LaunchScreen.storyboard */; };
 		925943C92315885000ADB39E /* appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925943C82315885000ADB39E /* appTests.swift */; };
 		925943D42315885000ADB39E /* appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925943D32315885000ADB39E /* appUITests.swift */; };
-		925943E623158B2900ADB39E /* Menu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925943E523158B2900ADB39E /* Menu.framework */; };
-		925943E723158B2900ADB39E /* Menu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 925943E523158B2900ADB39E /* Menu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +40,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				925943E723158B2900ADB39E /* Menu.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,7 +60,7 @@
 		925943CF2315885000ADB39E /* appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		925943D32315885000ADB39E /* appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appUITests.swift; sourceTree = "<group>"; };
 		925943D52315885000ADB39E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		925943E523158B2900ADB39E /* Menu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Menu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		925943FF2315B8D000ADB39E /* Menu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Menu.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/restaurantMenu-ekibzhucqknzntbrhmorpvycpqvn/Build/Products/Debug-iphoneos/Menu.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +68,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				925943E623158B2900ADB39E /* Menu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +91,11 @@
 		925943A72315884E00ADB39E = {
 			isa = PBXGroup;
 			children = (
-				925943E523158B2900ADB39E /* Menu.framework */,
 				925943B22315884E00ADB39E /* app */,
 				925943C72315885000ADB39E /* appTests */,
 				925943D22315885000ADB39E /* appUITests */,
 				925943B12315884E00ADB39E /* Products */,
+				925943FA2315B88900ADB39E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +138,14 @@
 				925943D52315885000ADB39E /* Info.plist */,
 			);
 			path = appUITests;
+			sourceTree = "<group>";
+		};
+		925943FA2315B88900ADB39E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				925943FF2315B8D000ADB39E /* Menu.framework */,
+			);
+			path = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

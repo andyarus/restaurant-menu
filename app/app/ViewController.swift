@@ -11,11 +11,15 @@ import Menu
 
 class ViewController: UIViewController {
   
+  // MARK: - Override Methods
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     loadUI()
   }
+  
+  // MARK: - Load UI Method
   
   func loadUI() {
     let vc = MenuViewController()
