@@ -10,6 +10,8 @@
 		925943972315882000ADB39E /* Menu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9259438D2315882000ADB39E /* Menu.framework */; };
 		9259439C2315882000ADB39E /* MenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259439B2315882000ADB39E /* MenuTests.swift */; };
 		9259439E2315882000ADB39E /* Menu.h in Headers */ = {isa = PBXBuildFile; fileRef = 925943902315882000ADB39E /* Menu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		925943E3231589DC00ADB39E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925943E1231589DC00ADB39E /* MenuViewController.swift */; };
+		925943E4231589DC00ADB39E /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 925943E2231589DC00ADB39E /* MenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		925943962315882000ADB39E /* MenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9259439B2315882000ADB39E /* MenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTests.swift; sourceTree = "<group>"; };
 		9259439D2315882000ADB39E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		925943E1231589DC00ADB39E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		925943E2231589DC00ADB39E /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 		925943832315882000ADB39E = {
 			isa = PBXGroup;
 			children = (
+				925943E1231589DC00ADB39E /* MenuViewController.swift */,
+				925943E2231589DC00ADB39E /* MenuViewController.xib */,
 				9259438F2315882000ADB39E /* Menu */,
 				9259439A2315882000ADB39E /* MenuTests */,
 				9259438E2315882000ADB39E /* Products */,
@@ -148,6 +154,7 @@
 				TargetAttributes = {
 					9259438C2315882000ADB39E = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					925943952315882000ADB39E = {
 						CreatedOnToolsVersion = 10.1;
@@ -177,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925943E4231589DC00ADB39E /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925943E3231589DC00ADB39E /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +350,7 @@
 		925943A22315882000ADB39E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -349,6 +359,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Menu/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,6 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yaav.Menu;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +377,7 @@
 		925943A32315882000ADB39E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -373,6 +386,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Menu/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,6 +403,7 @@
 		925943A52315882000ADB39E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MenuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -406,6 +421,7 @@
 		925943A62315882000ADB39E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MenuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

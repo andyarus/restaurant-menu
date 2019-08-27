@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import Menu
 
 class ViewController: UIViewController {
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    loadUI()
   }
-
-
+  
+  func loadUI() {
+    let vc = MenuViewController()
+    vc.view.frame = view.bounds
+    self.addChild(vc)
+    view.addSubview(vc.view)
+    vc.didMove(toParent: self)
+  }
+  
 }
-
