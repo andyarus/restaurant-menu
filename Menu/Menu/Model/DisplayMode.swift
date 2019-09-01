@@ -12,8 +12,7 @@ enum DisplayMode {
   case grid
   case consistent
   
-  func image() -> UIImage? {
-    let bundle = Bundle(for: MenuCollectionViewController.self)
+  func image(in bundle: Bundle) -> UIImage? {
     switch self {
     case .grid:
       return UIImage(named: "consistent", in: bundle, compatibleWith: nil)

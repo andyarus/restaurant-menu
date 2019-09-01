@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Name</key>
+		<string>Cola de Toro</string>
+		<key>Price</key>
+		<string>24</string>
+		<key>Image</key>
+		<string>1</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Razor clams, green chorizo and smoked yogurt </string>
+		<key>Price</key>
+		<string>20</string>
+		<key>Image</key>
+		<string>2</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Pork al pastor with pork belly, adobo and pineapple</string>
+		<key>Price</key>
+		<string>17</string>
+		<key>Image</key>
+		<string>3</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Charcoal Aguachile</string>
+		<key>Price</key>
+		<string>15</string>
+		<key>Image</key>
+		<string>4</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Esquites</string>
+		<key>Price</key>
+		<string>17</string>
+		<key>Image</key>
+		<string>5</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>A frozen amalgam of grapes, smoked tuna and balsamic vinegar</string>
+		<key>Price</key>
+		<string>50</string>
+		<key>Image</key>
+		<string>6</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Smoked trout mousse with strawberry gelee </string>
+		<key>Price</key>
+		<string>48.5</string>
+		<key>Image</key>
+		<string>7</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Beggar&apos;s purse with duck carnitas and tomatillo </string>
+		<key>Price</key>
+		<string>45</string>
+		<key>Image</key>
+		<string>8</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Wagyu short rib with carrot mole</string>
+		<key>Price</key>
+		<string>38</string>
+		<key>Image</key>
+		<string>9</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Radishes with chive-mint butter on a lavash cracker</string>
+		<key>Price</key>
+		<string>54</string>
+		<key>Image</key>
+		<string>10</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>An apple dessert</string>
+		<key>Price</key>
+		<string>30</string>
+		<key>Image</key>
+		<string>11</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Pork with garbanzo beans and pickled tomato </string>
+		<key>Price</key>
+		<string>70</string>
+		<key>Image</key>
+		<string>12</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Squid-ink striped ravioli with ricotta and clams in a clarified ham and clam broth with sugar snap peas and pea tendrils</string>
+		<key>Price</key>
+		<string>26</string>
+		<key>Image</key>
+		<string>13</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Manchego ice cream with greens</string>
+		<key>Price</key>
+		<string>45</string>
+		<key>Image</key>
+		<string>14</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>Huarache de Hongos with wild mushrooms, black beans and queso menonita</string>
+		<key>Price</key>
+		<string>61</string>
+		<key>Image</key>
+		<string>15</string>
+	</dict>
+</array>
+</plist>

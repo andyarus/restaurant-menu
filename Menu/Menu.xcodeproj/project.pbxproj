@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9215E1A1231BC2CF00BD0592 /* Dishes.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9215E1A0231BC2CF00BD0592 /* Dishes.plist */; };
 		9220811F231AFE4300F54C1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9220811E231AFE4300F54C1A /* Assets.xcassets */; };
 		925943972315882000ADB39E /* Menu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9259438D2315882000ADB39E /* Menu.framework */; };
 		9259439C2315882000ADB39E /* MenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9259439B2315882000ADB39E /* MenuTests.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9215E1A0231BC2CF00BD0592 /* Dishes.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Dishes.plist; sourceTree = "<group>"; };
 		9220811E231AFE4300F54C1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9259438D2315882000ADB39E /* Menu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Menu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		925943902315882000ADB39E /* Menu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
@@ -60,6 +62,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9215E19E231BBF7B00BD0592 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9220811E231AFE4300F54C1A /* Assets.xcassets */,
+				9215E1A0231BC2CF00BD0592 /* Dishes.plist */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		9215E19F231BBFBE00BD0592 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				925943902315882000ADB39E /* Menu.h */,
+				925943912315882000ADB39E /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		925943832315882000ADB39E = {
 			isa = PBXGroup;
 			children = (
@@ -81,12 +101,11 @@
 		9259438F2315882000ADB39E /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				9215E19E231BBF7B00BD0592 /* Assets */,
 				925943F72315B5B400ADB39E /* Model */,
 				9262F6C6231A4FE300C42767 /* View Controllers */,
 				925943EF23159AAB00ADB39E /* Views */,
-				925943902315882000ADB39E /* Menu.h */,
-				925943912315882000ADB39E /* Info.plist */,
-				9220811E231AFE4300F54C1A /* Assets.xcassets */,
+				9215E19F231BBFBE00BD0592 /* Supporting Files */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -217,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9215E1A1231BC2CF00BD0592 /* Dishes.plist in Resources */,
 				9220811F231AFE4300F54C1A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,7 +413,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Menu/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Menu/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -420,7 +440,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Menu/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Menu/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

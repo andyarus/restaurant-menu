@@ -10,9 +10,11 @@ import UIKit
 
 public class MenuCollectionViewController: UICollectionViewController {
   
-  var dishes: [Dish] = []
+  let bundle = Bundle(for: MenuCollectionViewController.self)
   
   var displayMode: DisplayMode = .consistent
+  
+  var dishes: [Dish] = []
   
   let layout: UICollectionViewFlowLayout = {
     let layout = UICollectionViewFlowLayout()
@@ -44,7 +46,7 @@ public class MenuCollectionViewController: UICollectionViewController {
     collectionView.backgroundColor = .white
     
     if isIPad {
-      navigationItem.rightBarButtonItem = UIBarButtonItem(image: displayMode.image(), style: .plain, target: self, action: #selector(changeDisplayMode))
+      navigationItem.rightBarButtonItem = UIBarButtonItem(image: displayMode.image(in: bundle), style: .plain, target: self, action: #selector(changeDisplayMode))
       
       switch displayMode {
       case .grid:
@@ -89,11 +91,14 @@ public class MenuCollectionViewController: UICollectionViewController {
   
   // temporarily here
   func loadData() {
-    for _ in 0...1000 {
-      dishes.append(Dish(name: "1", price: 1.0, image: nil))
-      dishes.append(Dish(name: "2", price: 11.0, image: nil))
-      dishes.append(Dish(name: "3", price: 111.0, image: nil))
-    }
+    
+    dishes = Dish.allDishes(in: bundle)
+    
+//    for _ in 0...1000 {
+//      dishes.append(Dish(name: "1", price: 1.0, image: UIImage()))
+//      dishes.append(Dish(name: "2", price: 11.0, image: UIImage()))
+//      dishes.append(Dish(name: "3", price: 111.0, image: UIImage()))
+//    }
   }
   
   @objc
@@ -105,7 +110,7 @@ public class MenuCollectionViewController: UICollectionViewController {
       displayMode = .grid
     }
     
-    navigationItem.rightBarButtonItem?.image = displayMode.image()
+    navigationItem.rightBarButtonItem?.image = displayMode.image(in: bundle)
     
     layout.itemSize = cellSize
     
@@ -143,7 +148,7 @@ extension MenuCollectionViewController {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCell.reuseIdentifier, for: indexPath) as! MenuCell
     
     cell.dishNameLabel.text = dishes[indexPath.row].name
-    cell.dishPriceLabel.text = String(dishes[indexPath.row].price)
+    cell.dishPriceLabel.text = "\(String(dishes[indexPath.row].price)) $"
     cell.dishImageView.image = dishes[indexPath.row].image
     
     return cell
