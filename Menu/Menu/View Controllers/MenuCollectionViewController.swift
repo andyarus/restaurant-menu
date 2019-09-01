@@ -153,7 +153,7 @@ extension MenuCollectionViewController {
       DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
         var dishes = Dish.getMoreDishes(in: self.bundle)
         
-        if self.dishes.count > 100 { dishes = [] } // При этом само меню должно показывать около 1000 блюд
+        if self.dishes.count > 1000 { dishes = [] } // При этом само меню должно показывать около 1000 блюд
         
         if !dishes.isEmpty {
           self.dishes.append(contentsOf: dishes)
