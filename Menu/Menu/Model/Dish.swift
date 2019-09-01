@@ -44,4 +44,8 @@ struct Dish {
     return dishes
   }
   
+  static func getMoreDishes(in bundle: Bundle) -> [Dish] {
+    return allDishes(in: bundle)
+  }
+  
 }

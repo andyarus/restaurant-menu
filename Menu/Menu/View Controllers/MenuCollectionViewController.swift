@@ -40,8 +40,30 @@ public class MenuCollectionViewController: UICollectionViewController {
     loadData()
   }
   
+  override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+      layout.itemSize = cellSize
+      layout.footerReferenceSize = CGSize(width: layout.itemSize.width, height: layout.itemSize.height)
+    
+      if isIPad {
+        switch displayMode {
+        case .grid:
+          layout.scrollDirection = .vertical
+        case .consistent:
+          layout.scrollDirection = .horizontal
+        }
+      } else {
+        if isLandscape {
+          layout.scrollDirection = .horizontal
+        } else {
+          layout.scrollDirection = .vertical
+        }
+      }
+  }
+  
   func setupUI() {
     collectionView.register(MenuCell.self, forCellWithReuseIdentifier: MenuCell.reuseIdentifier)
+    collectionView.register(MenuFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MenuFooter.reuseIdentifier)
     
     collectionView.backgroundColor = .white
     
@@ -67,38 +89,11 @@ public class MenuCollectionViewController: UICollectionViewController {
     }
     
     layout.itemSize = cellSize // layout.estimatedItemSize = layout.itemSize
+    layout.footerReferenceSize = CGSize(width: layout.itemSize.width, height: layout.itemSize.height)
   }
   
-  override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-    super.viewWillTransition(to: size, with: coordinator)
-      layout.itemSize = cellSize
-    
-      if isIPad {
-        switch displayMode {
-        case .grid:
-          layout.scrollDirection = .vertical
-        case .consistent:
-          layout.scrollDirection = .horizontal
-        }
-      } else {
-        if isLandscape {
-          layout.scrollDirection = .horizontal
-        } else {
-          layout.scrollDirection = .vertical
-        }
-      }
-  }
-  
-  // temporarily here
   func loadData() {
-    
     dishes = Dish.allDishes(in: bundle)
-    
-//    for _ in 0...1000 {
-//      dishes.append(Dish(name: "1", price: 1.0, image: UIImage()))
-//      dishes.append(Dish(name: "2", price: 11.0, image: UIImage()))
-//      dishes.append(Dish(name: "3", price: 111.0, image: UIImage()))
-//    }
   }
   
   @objc
@@ -113,6 +108,7 @@ public class MenuCollectionViewController: UICollectionViewController {
     navigationItem.rightBarButtonItem?.image = displayMode.image(in: bundle)
     
     layout.itemSize = cellSize
+    layout.footerReferenceSize = CGSize(width: layout.itemSize.width, height: layout.itemSize.height)
     
     if isIPad {
       switch displayMode {
@@ -147,11 +143,50 @@ extension MenuCollectionViewController {
   override public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MenuCell.reuseIdentifier, for: indexPath) as! MenuCell
     
-    cell.dishNameLabel.text = dishes[indexPath.row].name
-    cell.dishPriceLabel.text = "\(String(dishes[indexPath.row].price)) $"
-    cell.dishImageView.image = dishes[indexPath.row].image
+    if indexPath.row >= dishes.count - 1 {
+      // simulate refresh control
+      if layout.footerReferenceSize == .zero {
+        layout.footerReferenceSize = CGSize(width: layout.itemSize.width, height: layout.itemSize.height)
+      }
+      
+      // simulate data request delay (pagination)
+      DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        var dishes = Dish.getMoreDishes(in: self.bundle)
+        
+        if self.dishes.count > 100 { dishes = [] } // При этом само меню должно показывать около 1000 блюд
+        
+        if !dishes.isEmpty {
+          self.dishes.append(contentsOf: dishes)
+          collectionView.reloadData()
+        } else {
+          self.layout.footerReferenceSize = .zero
+        }
+      }
+    }
+    
+    let idx = indexPath.row < dishes.count ? indexPath.row : 0
+    
+    cell.dishNameLabel.text = dishes[idx].name
+    cell.dishPriceLabel.text = "\(String(dishes[idx].price)) $"
+    cell.dishImageView.image = dishes[idx].image
     
     return cell
+  }
+  
+}
+
+// MARK: - Section Footer
+
+extension MenuCollectionViewController {
+  
+  override public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    
+    if kind == UICollectionView.elementKindSectionFooter {
+      let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MenuFooter.reuseIdentifier, for: indexPath)
+      return footer
+    }
+    
+    return UICollectionReusableView()
   }
   
 }
